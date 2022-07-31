@@ -64,8 +64,8 @@ class CostumerSerializer(serializers.ModelSerializer):
             user_object.email = validated_data.get('email',user_object.email)
         if validated_data['password']:
             user_object.set_password(validated_data['password'])
-            user_object.save()
-            return validated_data
+        user_object.save()
+        return validated_data
 
 
 class CartSerializer(serializers.ModelSerializer):
